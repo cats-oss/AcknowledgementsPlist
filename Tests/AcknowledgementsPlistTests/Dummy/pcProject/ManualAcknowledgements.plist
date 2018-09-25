@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>PreferenceSpecifiers</key>
+	<array>
+		<dict>
+			<key>FooterText</key>
+			<string>EEE</string>
+			<key>Title</key>
+			<string>libE</string>
+		</dict>
+		<dict>
+			<key>FooterText</key>
+			<string>FFF</string>
+			<key>Title</key>
+			<string>libF</string>
+		</dict>
+	</array>
+</dict>
+</plist>
