@@ -12,13 +12,17 @@ import RxCocoa
 
 final class LicenseViewModel: ReactiveCompatible {
 
+    struct Input {
+        let settingsTap: ControlEvent<Void>
+    }
+
     var licenses: Observable<[LicenseViewSectionModel]> {
         return _licenses.asObservable()
     }
 
     private let _licenses = BehaviorRelay<[LicenseViewSectionModel]>(value: [])
 
-    init(settingsTap: ControlEvent<Void>) {
+    func bind(_ input: Input) {
         if let acknowledgementsPath = Bundle.main.path(forResource: "Sample-Acknowledgements", ofType: "plist"),
             let acknowledgements = NSDictionary(contentsOfFile: acknowledgementsPath),
             let preferenceSpecifiers = acknowledgements.object(forKey: "PreferenceSpecifiers") as? [[String: String]] {
@@ -26,7 +30,7 @@ final class LicenseViewModel: ReactiveCompatible {
             _licenses.accept(licenses)
         }
 
-        settingsTap
+        input.settingsTap
             .subscribe(onNext: {
                 if let url = URL(string: UIApplication.openSettingsURLString) {
                     UIApplication.shared.open(url)

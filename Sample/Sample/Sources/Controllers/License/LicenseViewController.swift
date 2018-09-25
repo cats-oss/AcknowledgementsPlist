@@ -23,16 +23,15 @@ final class LicenseViewController: UIViewController, Storyboardable {
         return item
     }
 
-    private lazy var dataSource: LicenseViewDataSource = {
-        .init(viewModel: viewModel)
-    }()
-
-    private lazy var viewModel: LicenseViewModel = {
-        .init(settingsTap: settingsButtonItem.rx.tap)
-    }()
+    private let dataSource = LicenseViewDataSource()
+    private let viewModel = LicenseViewModel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        dataSource.configure(tableView: tableView)
+
+        let input = LicenseViewModel.Input(settingsTap: settingsButtonItem.rx.tap)
+        viewModel.bind(input)
+
+        dataSource.configure(tableView: tableView, licenses: viewModel.licenses)
     }
 }

@@ -14,13 +14,7 @@ import RxDataSources
 
 final class LicenseViewDataSource: NSObject {
 
-    private let viewModel: LicenseViewModel
-
-    init(viewModel: LicenseViewModel) {
-        self.viewModel = viewModel
-    }
-
-    func configure(tableView: UITableView) {
+    func configure(tableView: UITableView, licenses: Observable<[LicenseViewSectionModel]>) {
         tableView.allowsSelection = false
         tableView.separatorStyle = .none
         tableView.register(cellType: LicenseCell.self)
@@ -36,7 +30,7 @@ final class LicenseViewDataSource: NSObject {
             }
         )
 
-        viewModel.licenses
+        licenses
             .bind(to: tableView.rx.items(dataSource: dataSource))
             .disposed(by: rx.disposeBag)
     }
