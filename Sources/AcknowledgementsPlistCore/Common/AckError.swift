@@ -10,6 +10,8 @@ import Foundation
 public enum AckError: Error {
     case projectRootPath
     case convertedURL
+    case podsDirURL
+    case carthageDirURL
     case podsCarhageLicenseURLs
     case manualAckPlist
     case manualACKPref
