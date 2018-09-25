@@ -1,0 +1,24 @@
+PODS:
+  - AttributedLabel (2.0.0)
+  - Reusable (4.0.3):
+    - Reusable/Storyboard (= 4.0.3)
+    - Reusable/View (= 4.0.3)
+  - Reusable/Storyboard (4.0.3)
+  - Reusable/View (4.0.3)
+
+DEPENDENCIES:
+  - AttributedLabel
+  - Reusable
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - AttributedLabel
+    - Reusable
+
+SPEC CHECKSUMS:
+  AttributedLabel: df810dfc5c27fa9bb3109dd8a20cf23dd654f007
+  Reusable: 12b67a60e1f3e8c523cc910795dab733f58fbc7e
+
+PODFILE CHECKSUM: 9aa9ffeda77e259d82a399425011081ab1613a80
+
+COCOAPODS: 1.5.3

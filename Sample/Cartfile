@@ -1,0 +1,5 @@
+## Reactive
+github "ReactiveX/RxSwift"
+github "RxSwiftCommunity/RxOptional"
+github "RxSwiftCommunity/NSObject-Rx"
+github "RxSwiftCommunity/RxDataSources"

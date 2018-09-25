@@ -1,0 +1,4 @@
+github "ReactiveX/RxSwift" "4.3.1"
+github "RxSwiftCommunity/NSObject-Rx" "4.4.0"
+github "RxSwiftCommunity/RxDataSources" "3.1.0"
+github "RxSwiftCommunity/RxOptional" "3.5.0"
