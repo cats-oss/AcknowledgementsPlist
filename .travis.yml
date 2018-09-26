@@ -1,0 +1,11 @@
+language: objective-c
+os: osx
+osx_image: xcode10.0
+before_install:
+  - gem install xcpretty
+before_script:
+  - set -o pipefail
+script:
+  - swift test
+notifications:
+  email: false
