@@ -1,5 +1,6 @@
 ## What's AcknowledgementsPlist
-`AcknowledgementsPlist` that combines licenses of `Carthage`, `CocoaPods`, and `Manual Plist` into `Bundle` and `Plist`.
+`AcknowledgementsPlist` that combines licenses of `Carthage`, `CocoaPods`, and `Manual Plist` into `Bundle` and `Plist`.  
+I implement it so that it will be completed locally!
 - [Carthage](https://github.com/Carthage/Carthage)
 - [CocoaPods](https://github.com/CocoaPods/CocoaPods)
 
@@ -30,10 +31,15 @@ Please use executable binary freely in each project!
 
 ## How to use AcknowledgementsPlist
 **See [Sample](https://github.com/cats-oss/AcknowledgementsPlist/tree/master/Sample), for more details.**  
+It is recommended to make it like [make-acknowledgements-plist.sh](https://github.com/cats-oss/AcknowledgementsPlist/blob/master/Sample/Scripts/AcknowledgementsPlist/make-acknowledgements-plist.sh).  
+I think that you can execute it after `Pods` or `Carthage` is updated.
 
 ### Usage
-`./AcknowledgementsPlist [PROJECT_ROOT_PATH] [OUTPUT_PATH] [OPTIONS]`  
-e.g. `./AcknowledgementsPlist . ./Sample/Resources/Sample-Acknowledgements.plist --manual-plist-path ./Sample/Resources/ManualAcknowledgements.plist`
+```
+./AcknowledgementsPlist [PROJECT_ROOT_PATH] [OUTPUT_PATH] [OPTIONS]
+
+e.g. ./AcknowledgementsPlist . ./Sample-Acknowledgements.plist --manual-plist-path ./ManualAcknowledgements.plist
+```
 
 #### `[PROJECT_ROOT_PATH]`
 - Required🔥
