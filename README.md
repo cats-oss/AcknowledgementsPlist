@@ -32,10 +32,10 @@ Please use `exe binary` freely in each project!
 ### Usage
 `./AcknowledgementsPlist project-root-path output-path options`
 
-#### `First argument` - `project-root-path`
+#### `project-root-path`
 - Please specify the project root path as seen from the directory to be executed!
 
-#### `Second argument` - `output-path`
+#### `output-path`
 - Please specify the file name of `./~/foo.plist` and the bundle file name of `./~/bar.bundle` that starting from `project-root-path`!
 
 ### Options
