@@ -9,8 +9,8 @@ import Foundation
 import Commander
 import AcknowledgementsPlistCore
 
-let main = command(Argument<String>("projectRootPath", description: "Project root path seen from the execution location."),
-                   Argument<String>("OutPutPath", description: "Absolute path of plist or bundle output path from project root."),
+let main = command(Argument<String>("project-root-path", description: "Project root path seen from the execution location."),
+                   Argument<String>("output-path", description: "Absolute path of plist or bundle output path from project root."),
                    Option("pods-path", default: "", description: "Absolute path of pods from project root."),
                    Option("carthage-checkouts-path", default: "", description: "Absolute path of carthage from project root."),
                    Option("manual-plist-path", default: "", description: "Absolute path of carthage from project root.")
