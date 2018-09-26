@@ -1,6 +1,0 @@
-framework module AttributedLabel {
-  umbrella header "AttributedLabel-umbrella.h"
-
-  export *
-  module * { export * }
-}
