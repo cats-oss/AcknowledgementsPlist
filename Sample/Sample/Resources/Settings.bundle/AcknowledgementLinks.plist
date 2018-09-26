@@ -6,6 +6,14 @@
 	<array>
 		<dict>
 			<key>File</key>
+			<string>Licenses/AcknowledgementsPlist</string>
+			<key>Title</key>
+			<string>AcknowledgementsPlist</string>
+			<key>Type</key>
+			<string>PSChildPaneSpecifier</string>
+		</dict>
+		<dict>
+			<key>File</key>
 			<string>Licenses/AttributedLabel</string>
 			<key>Title</key>
 			<string>AttributedLabel</string>

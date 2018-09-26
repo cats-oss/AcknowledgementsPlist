@@ -4,6 +4,9 @@ platform :ios, '12.0'
 target 'Sample' do
   use_frameworks!
 
+  ## Tool
+  pod 'AcknowledgementsPlist'
+
   ## UI
   pod 'AttributedLabel'
   pod 'Reusable'

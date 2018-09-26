@@ -31,7 +31,7 @@ Please use executable binary freely in each project!
 
 ## How to use AcknowledgementsPlist
 **See [Sample](https://github.com/cats-oss/AcknowledgementsPlist/tree/master/Sample), for more details.**  
-It is recommended to make it like [make-acknowledgements-plist.sh](https://github.com/cats-oss/AcknowledgementsPlist/blob/master/Sample/Scripts/AcknowledgementsPlist/make-acknowledgements-plist.sh).  
+It is recommended to make it like [make-acknowledgements-plist.sh](https://github.com/cats-oss/AcknowledgementsPlist/blob/master/Sample/Scripts/make-acknowledgements-plist.sh).  
 I think that you can execute it after `Pods` or `Carthage` is updated.
 
 ### Usage

@@ -56,6 +56,6 @@ public extension NibOwnerLoadable where Self: UIView {
 /// Swift < 4.2 support
 #if !(swift(>=4.2))
 private extension NSLayoutConstraint {
-  typealias Attribute = NSLayoutConstraint.Attribute
+  typealias Attribute = NSLayoutConstraint.NSLayoutConstraint.Attribute
 }
 #endif
