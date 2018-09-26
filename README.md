@@ -26,19 +26,24 @@ pod 'AcknowledgementsPlist'
 ```
 
 #### Executable binary from [releases](https://github.com/cats-oss/AcknowledgementsPlist/releases)
-Please use `exe binary` freely in each project!
+Please use executable binary freely in each project!
 
 ## How to use AcknowledgementsPlist
-### Usage
-`./AcknowledgementsPlist project-root-path output-path options`
+**See [Sample](https://github.com/cats-oss/AcknowledgementsPlist/tree/master/Sample), for more details.**  
 
-#### `project-root-path`
+### Usage
+`./AcknowledgementsPlist [PROJECT_ROOT_PATH] [OUTPUT_PATH] [OPTIONS]`  
+e.g. `./AcknowledgementsPlist . ./Sample/Resources/Sample-Acknowledgements.plist --manual-plist-path ./Sample/Resources/ManualAcknowledgements.plist`
+
+#### `[PROJECT_ROOT_PATH]`
+- Required🔥
 - Please specify the project root path as seen from the directory to be executed!
 
-#### `output-path`
-- Please specify the file name of `./~/foo.plist` and the bundle file name of `./~/bar.bundle` that starting from `project-root-path`!
+#### `[OUTPUT_PATH]`
+- Required🔥
+- Please specify the file name of `./~/foo.plist` and the bundle file name of `./~/bar.bundle` that starting from project root!
 
-### Options
+### [OPTIONS]
 #### `--pods-path`
 - You can specify a `Pods` file path. The default is to search automatically.
 
@@ -48,26 +53,26 @@ Please use `exe binary` freely in each project!
 #### `--manual-plist-path`
 - You can add and include licenses manually to plist.
 - The configuration of plist.↓
-```
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>PreferenceSpecifiers</key>
-	<array>
-		<dict>
-			<key>FooterText</key>
-			<string>Legal Text</string>
-			<key>Title</key>
-			<string>Library Name</string>
-		</dict>
-		<dict>
-			<key>FooterText</key>
-			<string>Legal Text</string>
-			<key>Title</key>
-			<string>Library Name</string>
-		</dict>
-	</array>
+    <key>PreferenceSpecifiers</key>
+    <array>
+        <dict>
+            <key>FooterText</key>
+            <string>Legal Text</string>
+            <key>Title</key>
+            <string>Library Name</string>
+        </dict>
+        <dict>
+            <key>FooterText</key>
+            <string>Legal Text</string>
+            <key>Title</key>
+            <string>Library Name</string>
+        </dict>
+    </array>
 </dict>
 </plist>
 ```
@@ -77,13 +82,13 @@ Please use `exe binary` freely in each project!
 If `Carthage/Checkouts` does not exist, execute the command of `carthage checkout`.
 
 2. Determine the location of the `AcknowledgementsPlist` and the output location of `Plist`.  
-e.g. `./AcknowledgementsPlist ./../.. ./Sample/Resources/Sample-Acknowledgements.plist`
+e.g. `./AcknowledgementsPlist . ./Sample/Resources/Sample-Acknowledgements.plist`
 
 ### Make Bundle
-1.  Please do `1.` of [Make Plist](### Make Plist).
+1.  Please do `1.` of Make Plist.
 
 2. Make bundle and change `Root.plist` to the following configuration.
-```
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
@@ -106,7 +111,7 @@ e.g. `./AcknowledgementsPlist ./../.. ./Sample/Resources/Sample-Acknowledgements
 ```
 
 3. Determine the location of the `AcknowledgementsPlist` and the output location of `Bundle`.  
-e.g. `./AcknowledgementsPlist ./../.. ./Sample/Resources/Settings.bundle`
+e.g. `./AcknowledgementsPlist . ./Sample/Resources/Settings.bundle`
 
 ## LICENSE
 Under the MIT license. See [LICENSE](https://github.com/cats-oss/AcknowledgementsPlist/blob/master/LICENSE) file for details.
