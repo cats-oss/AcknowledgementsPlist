@@ -3,10 +3,8 @@ os: osx
 osx_image: xcode10
 before_install:
   - gem install xcpretty
-before_script:
-  - set -o pipefail
 script:
   - swift build
-  - swift test
+  - swift test 2>&1 | xcpretty
 notifications:
   email: false
