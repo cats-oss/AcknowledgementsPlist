@@ -1,4 +1,4 @@
-language: objective-c
+language: generic
 os: osx
 osx_image: xcode10
 before_install:
@@ -7,5 +7,6 @@ before_script:
   - set -o pipefail
 script:
   - swift build
+  - swift test
 notifications:
   email: false
