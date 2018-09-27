@@ -6,6 +6,7 @@ I implement it so that it will be completed locally!
 
 ![Swift](https://img.shields.io/badge/Swift-4.2-orange.svg)
 [![Cocoapods](https://img.shields.io/badge/Cocoapods-compatible-brightgreen.svg)](https://img.shields.io/badge/Cocoapods-compatible-brightgreen.svg)
+[![Build Status](https://travis-ci.org/cats-oss/AcknowledgementsPlist.svg?branch=master)](https://travis-ci.org/cats-oss/AcknowledgementsPlist)
 [![License](http://img.shields.io/badge/license-MIT-lightgrey.svg?style=flat)](http://mit-license.org)
 
 <table border="0">
