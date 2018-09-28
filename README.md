@@ -84,6 +84,10 @@ e.g. ./AcknowledgementsPlist . ./Sample-Acknowledgements.plist --manual-plist-pa
 </plist>
 ```
 
+#### `--exclude-word`
+- Exclude URLs that contain the specified word.
+- e.g. `--exclude-word "NSObject-Rx RxOptional"`
+
 ### Make Plist
 1. Check if `Pods` and b `Carthage/Checkouts` exist.  
 If `Carthage/Checkouts` does not exist, execute the command of `carthage checkout`.

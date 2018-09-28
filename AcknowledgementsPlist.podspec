@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = 'AcknowledgementsPlist'
-  s.version      = '0.0.1'
+  s.version      = '0.0.2'
   s.summary      = 'AcknowledgementsPlist manages the licenses of libraries that depend on your iOS app.'
   s.homepage     = 'https://github.com/cats-oss/AcknowledgementsPlist'
   s.license      = { :type => 'MIT', :file => 'LICENSE' }
