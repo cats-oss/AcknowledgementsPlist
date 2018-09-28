@@ -40,12 +40,18 @@ playground.xcworkspace
 
 ## CocoaPods
 Pods/
+
+## Tests
 !/Tests/AcknowledgementsPlistTests/Dummy/pProject/Pods
 
+## Tests
 !/Tests/AcknowledgementsPlistTests/Dummy/pcProject/Pods
 
 ## Carthage
 Carthage/
+
+## Tests
 !/Tests/AcknowledgementsPlistTests/Dummy/cProject/Carthage
 
+## Tests
 !/Tests/AcknowledgementsPlistTests/Dummy/pcProject/Carthage
