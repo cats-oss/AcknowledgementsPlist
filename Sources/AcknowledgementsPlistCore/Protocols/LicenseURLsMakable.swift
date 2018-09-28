@@ -64,8 +64,8 @@ extension LicenseURLsMakable {
     }
 
     private func getAllDirContentsURLs() throws -> [URL] {
-        let options: FileManager.DirectoryEnumerationOptions = [.skipsHiddenFiles]
-        guard let rootURL = URL(string: manager.currentDirectoryPath), let allDirPaths = manager.enumerator(at: rootURL, includingPropertiesForKeys: nil, options: options) else {
+        let managerOptions: FileManager.DirectoryEnumerationOptions = [.skipsHiddenFiles]
+        guard let rootURL = URL(string: manager.currentDirectoryPath), let allDirPaths = manager.enumerator(at: rootURL, includingPropertiesForKeys: nil, options: managerOptions) else {
             throw AckError.projectRootPath
         }
 
@@ -76,19 +76,21 @@ extension LicenseURLsMakable {
     }
 
     private func getLicenseURLs(dirURL: URL) throws -> [URL] {
-        let options: FileManager.DirectoryEnumerationOptions = [.skipsSubdirectoryDescendants, .skipsHiddenFiles]
-        var libDirUnderURLs = [URL]()
-        let libDirURLs = try manager.contentsOfDirectory(at: dirURL, includingPropertiesForKeys: nil, options: options)
-        libDirURLs.forEach {
-            if let libDirUnderURL = try? manager.contentsOfDirectory(at: $0, includingPropertiesForKeys: nil, options: options) {
-                libDirUnderURLs.append(contentsOf: libDirUnderURL)
-            }
-        }
+        let managerOptions: FileManager.DirectoryEnumerationOptions = [.skipsSubdirectoryDescendants, .skipsHiddenFiles]
+        let libDirURLs = try manager.contentsOfDirectory(at: dirURL, includingPropertiesForKeys: nil, options: managerOptions)
+        let libDirUnderURLs = Array(libDirURLs.compactMap { try? manager.contentsOfDirectory(at: $0, includingPropertiesForKeys: nil, options: managerOptions) }.joined())
 
-        let licenseURLs = libDirUnderURLs.filter { url in
+        var licenseURLs = libDirUnderURLs.filter { url in
             let lastPathComp = url.lastPathComponent
             return lastPathComp.localizedCaseInsensitiveContains("license") || lastPathComp.localizedCaseInsensitiveContains("licence")
         }
+
+        if !options.excludeStrArray.isEmpty {
+            options.excludeStrArray.forEach { exStr in
+                licenseURLs = licenseURLs.compactMap { !$0.path.localizedCaseInsensitiveContains(exStr) ? $0 : nil }
+            }
+        }
+
         return licenseURLs
     }
 }
