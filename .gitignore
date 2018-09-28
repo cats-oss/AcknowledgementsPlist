@@ -39,7 +39,7 @@ playground.xcworkspace
 /*.xcodeproj
 
 ## CocoaPods
-Pods/*
+Pods/
 
 ## Carthage
-Carthage/*
+Carthage/
