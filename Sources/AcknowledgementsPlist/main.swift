@@ -14,18 +14,18 @@ let main = command(Argument<String>("project-root-path", description: "Project r
                    Option("pods-path", default: "", description: "Absolute path of pods from project root."),
                    Option("carthage-checkouts-path", default: "", description: "Absolute path of carthage from project root."),
                    Option("manual-plist-path", default: "", description: "Absolute path of carthage from project root."),
-                   Option("exclude-string", default: "", description: "Exclude URLs that contain the specified string.")
-) { projectRootPath, outputPath, podsPath, carthageCheckoutsPath, manualAcknowledgementsPath, excludeStr in
+                   Option("exclude-word", default: "", description: "Exclude URLs that contain the specified word.")
+) { projectRootPath, outputPath, podsPath, carthageCheckoutsPath, manualAcknowledgementsPath, excludeWord in
     let outputPlistPath = outputPath.hasSuffix(".plist") ? outputPath : ""
     let outputBundlePath = outputPath.hasSuffix(".bundle") ? outputPath : ""
-    let excludeStrArray = excludeStr.components(separatedBy: " ")
+    let excludeWordArray = excludeWord.components(separatedBy: " ")
     let options = Options(projectRootPath: projectRootPath,
                           outputPlistPath: outputPlistPath,
                           outputBundlePath: outputBundlePath,
                           podsPath: podsPath,
                           carthageCheckoutsPath: carthageCheckoutsPath,
                           manualAcknowledgementsPath: manualAcknowledgementsPath,
-                          excludeStrArray: excludeStrArray)
+                          excludeWordArray: excludeWordArray)
     do {
         let acknowledgements = try Acknowledgements(options: options)
         try acknowledgements.make()

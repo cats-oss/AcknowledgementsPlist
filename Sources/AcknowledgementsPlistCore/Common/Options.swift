@@ -16,7 +16,7 @@ public struct Options {
     public let podsPath: String
     public let carthageCheckoutsPath: String
     public let manualAcknowledgementsPath: String
-    public let excludeStrArray: [String]
+    public let excludeWordArray: [String]
 
     public init(projectRootPath: String,
                 outputPlistPath: String,
@@ -24,13 +24,13 @@ public struct Options {
                 podsPath: String,
                 carthageCheckoutsPath: String,
                 manualAcknowledgementsPath: String,
-                excludeStrArray: [String]) {
+                excludeWordArray: [String]) {
         self.projectRootPath = projectRootPath
         self.outputPlistPath = outputPlistPath
         self.outputBundlePath = outputBundlePath
         self.podsPath = podsPath
         self.carthageCheckoutsPath = carthageCheckoutsPath
         self.manualAcknowledgementsPath = manualAcknowledgementsPath
-        self.excludeStrArray = excludeStrArray
+        self.excludeWordArray = excludeWordArray
     }
 }

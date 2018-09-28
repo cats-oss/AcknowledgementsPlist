@@ -85,8 +85,8 @@ extension LicenseURLsMakable {
             return lastPathComp.localizedCaseInsensitiveContains("license") || lastPathComp.localizedCaseInsensitiveContains("licence")
         }
 
-        if !options.excludeStrArray.isEmpty {
-            options.excludeStrArray.forEach { exStr in
+        if !options.excludeWordArray.isEmpty {
+            options.excludeWordArray.forEach { exStr in
                 licenseURLs = licenseURLs.compactMap { !$0.path.localizedCaseInsensitiveContains(exStr) ? $0 : nil }
             }
         }
