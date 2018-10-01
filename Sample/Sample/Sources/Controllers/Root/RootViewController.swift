@@ -9,18 +9,14 @@
 import UIKit
 import NSObject_Rx
 
-final class RootViewController: UIViewController, Storyboardable {
-
-    class func make() -> RootViewController {
-        let viewController = RootViewController.makeFromStoryboard()
-        return viewController
-    }
+final class RootViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let navigationController = UINavigationController(rootViewController: LicenseViewController.make())
+        let navigationController = UINavigationController(rootViewController: LicenseViewController())
         addChild(navigationController)
+        navigationController.view.frame = view.bounds
         view.addSubview(navigationController.view)
         navigationController.didMove(toParent: self)
     }

@@ -1,5 +1,5 @@
 PODS:
-  - AcknowledgementsPlist (0.0.1)
+  - AcknowledgementsPlist (0.0.2)
   - AttributedLabel (2.0.0)
   - Reusable (4.0.3):
     - Reusable/Storyboard (= 4.0.3)
@@ -8,7 +8,7 @@ PODS:
   - Reusable/View (4.0.3)
 
 DEPENDENCIES:
-  - AcknowledgementsPlist (= 0.0.1)
+  - AcknowledgementsPlist (= 0.0.2)
   - AttributedLabel (= 2.0.0)
   - Reusable (= 4.0.3)
 
@@ -19,10 +19,10 @@ SPEC REPOS:
     - Reusable
 
 SPEC CHECKSUMS:
-  AcknowledgementsPlist: d9e73de4415ecf48100a5641660f0368ae82fd69
+  AcknowledgementsPlist: 9461c737c39040ec6f6c83f7083c0bca55c889eb
   AttributedLabel: df810dfc5c27fa9bb3109dd8a20cf23dd654f007
   Reusable: 12b67a60e1f3e8c523cc910795dab733f58fbc7e
 
-PODFILE CHECKSUM: 5faab87b38eb53a8d81e766b228498bf254e56f0
+PODFILE CHECKSUM: 44ebafd30492e1241c36ade6b71209b22e6c7874
 
 COCOAPODS: 1.5.3

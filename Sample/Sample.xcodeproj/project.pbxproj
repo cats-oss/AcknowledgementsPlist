@@ -27,11 +27,11 @@
 		A6051985215775C700A108FA /* Sample-Acknowledgements.plist in Resources */ = {isa = PBXBuildFile; fileRef = A6051984215775C700A108FA /* Sample-Acknowledgements.plist */; };
 		A605198B2158A76900A108FA /* Storyboardable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A605198A2158A76900A108FA /* Storyboardable.swift */; };
 		A605198E2158A7F400A108FA /* NSObjectProtocolExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A605198D2158A7F400A108FA /* NSObjectProtocolExtension.swift */; };
-		A60519902158A86400A108FA /* LicenseViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A605198F2158A86400A108FA /* LicenseViewController.storyboard */; };
-		A60519922158AAFE00A108FA /* RootViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A60519912158AAFE00A108FA /* RootViewController.storyboard */; };
 		A60519992158E86400A108FA /* LicenseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A60519982158E86400A108FA /* LicenseCell.swift */; };
 		A605199B2158E86F00A108FA /* LicenseCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A605199A2158E86F00A108FA /* LicenseCell.xib */; };
 		A605199F2158FEEC00A108FA /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A605199E2158FEEC00A108FA /* Settings.bundle */; };
+		A62759192161E639006C600E /* LicenseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A62759182161E639006C600E /* LicenseViewController.xib */; };
+		A627591B2161EC5E006C600E /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A627591A2161EC5E006C600E /* RootViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,11 +56,11 @@
 		A6051984215775C700A108FA /* Sample-Acknowledgements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Sample-Acknowledgements.plist"; sourceTree = "<group>"; };
 		A605198A2158A76900A108FA /* Storyboardable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboardable.swift; sourceTree = "<group>"; };
 		A605198D2158A7F400A108FA /* NSObjectProtocolExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSObjectProtocolExtension.swift; sourceTree = "<group>"; };
-		A605198F2158A86400A108FA /* LicenseViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LicenseViewController.storyboard; sourceTree = "<group>"; };
-		A60519912158AAFE00A108FA /* RootViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RootViewController.storyboard; sourceTree = "<group>"; };
 		A60519982158E86400A108FA /* LicenseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LicenseCell.swift; sourceTree = "<group>"; };
 		A605199A2158E86F00A108FA /* LicenseCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LicenseCell.xib; sourceTree = "<group>"; };
 		A605199E2158FEEC00A108FA /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+		A62759182161E639006C600E /* LicenseViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LicenseViewController.xib; sourceTree = "<group>"; };
+		A627591A2161EC5E006C600E /* RootViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RootViewController.xib; sourceTree = "<group>"; };
 		CC6B5FBA390F5C6B2BDE5254 /* Pods-Sample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sample.release.xcconfig"; path = "Pods/Target Support Files/Pods-Sample/Pods-Sample.release.xcconfig"; sourceTree = "<group>"; };
 		EA27BABC79171578C4852EE8 /* Pods_Sample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB36155518780D612D3AFC6E /* Pods-Sample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Sample/Pods-Sample.debug.xcconfig"; sourceTree = "<group>"; };
@@ -172,7 +172,7 @@
 		A605196B2157645900A108FA /* License */ = {
 			isa = PBXGroup;
 			children = (
-				A605198F2158A86400A108FA /* LicenseViewController.storyboard */,
+				A62759182161E639006C600E /* LicenseViewController.xib */,
 				A605196D2157645900A108FA /* LicenseViewController.swift */,
 				A6051976215764E500A108FA /* LincenseViewModel.swift */,
 				A60519782157653900A108FA /* LicenseViewDataSource.swift */,
@@ -184,7 +184,7 @@
 		A605196E2157645900A108FA /* Root */ = {
 			isa = PBXGroup;
 			children = (
-				A60519912158AAFE00A108FA /* RootViewController.storyboard */,
+				A627591A2161EC5E006C600E /* RootViewController.xib */,
 				A605196F2157645900A108FA /* RootViewController.swift */,
 			);
 			path = Root;
@@ -278,13 +278,13 @@
 			files = (
 				A6051985215775C700A108FA /* Sample-Acknowledgements.plist in Resources */,
 				A605199B2158E86F00A108FA /* LicenseCell.xib in Resources */,
+				A62759192161E639006C600E /* LicenseViewController.xib in Resources */,
 				A605197F21576A7200A108FA /* ManualAcknowledgements.plist in Resources */,
 				A60519502154EA9500A108FA /* Cartfile in Resources */,
 				A605196921575D4B00A108FA /* LaunchScreen.storyboard in Resources */,
-				A60519902158A86400A108FA /* LicenseViewController.storyboard in Resources */,
 				A605194B2154E72B00A108FA /* Assets.xcassets in Resources */,
+				A627591B2161EC5E006C600E /* RootViewController.xib in Resources */,
 				A605199F2158FEEC00A108FA /* Settings.bundle in Resources */,
-				A60519922158AAFE00A108FA /* RootViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

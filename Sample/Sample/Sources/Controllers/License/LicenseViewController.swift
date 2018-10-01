@@ -10,11 +10,6 @@ import UIKit
 
 final class LicenseViewController: UIViewController, Storyboardable {
 
-    class func make() -> LicenseViewController {
-        let viewController = LicenseViewController.makeFromStoryboard()
-        return viewController
-    }
-
     @IBOutlet private weak var tableView: UITableView!
 
     private var settingsButtonItem: UIBarButtonItem {
@@ -29,9 +24,9 @@ final class LicenseViewController: UIViewController, Storyboardable {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        dataSource.configure(tableView: tableView, licenses: viewModel.licenses)
+
         let input = LicenseViewModel.Input(settingsTap: settingsButtonItem.rx.tap)
         viewModel.bind(input)
-
-        dataSource.configure(tableView: tableView, licenses: viewModel.licenses)
     }
 }
