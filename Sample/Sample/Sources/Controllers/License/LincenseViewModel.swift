@@ -21,6 +21,7 @@ final class LicenseViewModel: ReactiveCompatible {
     }
 
     private let _licenses = BehaviorRelay<[LicenseViewSectionModel]>(value: [])
+    private let disposeBag = DisposeBag()
 
     func bind(_ input: Input) {
         if let acknowledgementsPath = Bundle.main.path(forResource: "Sample-Acknowledgements", ofType: "plist"),
@@ -36,6 +37,6 @@ final class LicenseViewModel: ReactiveCompatible {
                     UIApplication.shared.open(url)
                 }
             })
-            .disposed(by: rx.disposeBag)
+            .disposed(by: disposeBag)
     }
 }

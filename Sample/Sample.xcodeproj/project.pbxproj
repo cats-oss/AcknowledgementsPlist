@@ -12,7 +12,6 @@
 		A605194E2154E72B00A108FA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A605194A2154E72B00A108FA /* AppDelegate.swift */; };
 		A60519502154EA9500A108FA /* Cartfile in Resources */ = {isa = PBXBuildFile; fileRef = A605194F2154EA9500A108FA /* Cartfile */; };
 		A60519572154EAF200A108FA /* RxDataSources.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A60519512154EAF200A108FA /* RxDataSources.framework */; };
-		A60519582154EAF200A108FA /* NSObject_Rx.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A60519522154EAF200A108FA /* NSObject_Rx.framework */; };
 		A60519592154EAF200A108FA /* Differentiator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A60519532154EAF200A108FA /* Differentiator.framework */; };
 		A605195A2154EAF200A108FA /* RxOptional.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A60519542154EAF200A108FA /* RxOptional.framework */; };
 		A605195B2154EAF200A108FA /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A60519552154EAF200A108FA /* RxSwift.framework */; };
@@ -72,7 +71,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				A60519572154EAF200A108FA /* RxDataSources.framework in Frameworks */,
-				A60519582154EAF200A108FA /* NSObject_Rx.framework in Frameworks */,
 				A60519592154EAF200A108FA /* Differentiator.framework in Frameworks */,
 				A605195A2154EAF200A108FA /* RxOptional.framework in Frameworks */,
 				A605195B2154EAF200A108FA /* RxSwift.framework in Frameworks */,
@@ -316,7 +314,6 @@
 			);
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/Differentiator.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/NSObject_Rx.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RxCocoa.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RxDataSources.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/RxOptional.framework",
