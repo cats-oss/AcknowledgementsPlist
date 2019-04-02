@@ -22,14 +22,6 @@
 		</dict>
 		<dict>
 			<key>File</key>
-			<string>Licenses/Reusable</string>
-			<key>Title</key>
-			<string>Reusable</string>
-			<key>Type</key>
-			<string>PSChildPaneSpecifier</string>
-		</dict>
-		<dict>
-			<key>File</key>
 			<string>Licenses/RxDataSources</string>
 			<key>Title</key>
 			<string>RxDataSources</string>
