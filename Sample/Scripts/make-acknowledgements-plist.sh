@@ -5,7 +5,7 @@ ACK_PLIST_EXE=${PROJECT_ROOT_PATH}/Pods/AcknowledgementsPlist/AcknowledgementsPl
 OUTPUT_PLIST_PATH=./Sample/Resources/Sample-Acknowledgements.plist
 OUTPUT_BUNDLE_PATH=./Sample/Resources/Settings.bundle
 MANUAL_ACK_PATH=./Sample/Resources/ManualAcknowledgements.plist
-EXCLUDE_WORD="NSObject-Rx RxOptional"
+EXCLUDE_WORD="RxOptional Reusable"
 
 # make plist
 $ACK_PLIST_EXE $PROJECT_ROOT_PATH $OUTPUT_PLIST_PATH --manual-plist-path $MANUAL_ACK_PATH --exclude-word "$EXCLUDE_WORD"

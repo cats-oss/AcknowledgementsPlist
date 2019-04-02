@@ -13,6 +13,7 @@ import Reusable
 import RxDataSources
 
 final class LicenseViewDataSource: NSObject {
+    private let disposeBag = DisposeBag()
 
     func configure(tableView: UITableView, licenses: Observable<[LicenseViewSectionModel]>) {
         tableView.allowsSelection = false
@@ -32,6 +33,6 @@ final class LicenseViewDataSource: NSObject {
 
         licenses
             .bind(to: tableView.rx.items(dataSource: dataSource))
-            .disposed(by: rx.disposeBag)
+            .disposed(by: disposeBag)
     }
 }
