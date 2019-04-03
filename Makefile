@@ -2,13 +2,15 @@ TEMP_ZIP_DIR=./tmp/portable_zip
 SWIFT_BIN_DIR=$(shell swift build -c release --show-bin-path)
 BIN_NAME=acknowledgementsplist
 
-.PHONY: portable_zip
+.PHONY: project release_build portable_zip
 
 project:
 	swift package generate-xcodeproj
 
-portable_zip:
-	swift build -c release --static-swift-stdlib
+release_build:
+	swift build -c release
+
+portable_zip: release_build
 	mkdir -p $(TEMP_ZIP_DIR)
 	cp -f $(SWIFT_BIN_DIR)/$(BIN_NAME) $(TEMP_ZIP_DIR)
 	cp -f LICENSE $(TEMP_ZIP_DIR)
