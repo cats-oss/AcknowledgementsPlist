@@ -13,9 +13,10 @@ let main = command(Argument<String>("project-root-path", description: "Project r
                    Argument<String>("output-path", description: "Absolute path of plist or bundle output path from project root."),
                    Option("pods-path", default: "", description: "Absolute path of pods from project root."),
                    Option("carthage-checkouts-path", default: "", description: "Absolute path of carthage from project root."),
-                   Option("manual-plist-path", default: "", description: "Absolute path of carthage from project root."),
+                   Option("manual-plist-path", default: "", description: "Absolute path of manual liceses plist from project root."),
+                   Option("manual-license-files-path", default: "", description: "Absolute path of manual liceses files from project root."),
                    Option("exclude-word", default: "", description: "Exclude URLs that contain the specified word.")
-) { projectRootPath, outputPath, podsPath, carthageCheckoutsPath, manualAcknowledgementsPath, excludeWord in
+) { projectRootPath, outputPath, podsPath, carthageCheckoutsPath, manualPlistPath, manualLicenseFilesPath, excludeWord in
     let outputPlistPath = outputPath.hasSuffix(".plist") ? outputPath : ""
     let outputBundlePath = outputPath.hasSuffix(".bundle") ? outputPath : ""
     let excludeWordArray = excludeWord.components(separatedBy: " ")
@@ -24,7 +25,8 @@ let main = command(Argument<String>("project-root-path", description: "Project r
                           outputBundlePath: outputBundlePath,
                           podsPath: podsPath,
                           carthageCheckoutsPath: carthageCheckoutsPath,
-                          manualAcknowledgementsPath: manualAcknowledgementsPath,
+                          manualPlistPath: manualPlistPath,
+                          manualLicenseFilesPath: manualLicenseFilesPath,
                           excludeWordArray: excludeWordArray)
     do {
         let acknowledgements = try Acknowledgements(options: options)
@@ -39,7 +41,7 @@ let main = command(Argument<String>("project-root-path", description: "Project r
             print("Pods directory URL not found.")
         case .carthageDirURL:
             print("Carthage directory URL not found.")
-        case .podsCarhageLicenseURLs:
+        case .emptyLicenseURLs:
             print("Pods and Carthage URLs is impty.")
         case .manualAckPlist:
             print("ManualAcknowledgements.plist not found.")
