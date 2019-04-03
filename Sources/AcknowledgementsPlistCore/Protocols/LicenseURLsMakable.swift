@@ -12,6 +12,7 @@ public protocol LicenseURLsMakable: class {
     var manager: FileManager { get }
     var podsLicenseURLs: [URL] { get set }
     var carthageLicenseURLs: [URL] { get set }
+    var manualLicenseURLs: [URL] { get set }
 }
 
 extension LicenseURLsMakable {
@@ -19,8 +20,10 @@ extension LicenseURLsMakable {
     public func makeLicenseURLs() throws {
         podsLicenseURLs = try getPodsLicenseURLs()
         carthageLicenseURLs = try getCarthageLicenseURLs()
-        if podsLicenseURLs.isEmpty && carthageLicenseURLs.isEmpty {
-            throw AckError.podsCarhageLicenseURLs
+        manualLicenseURLs = try getManualLicenseURLs()
+
+        if podsLicenseURLs.isEmpty && carthageLicenseURLs.isEmpty && manualLicenseURLs.isEmpty {
+            throw AckError.emptyLicenseURLs
         }
     }
 
@@ -61,6 +64,12 @@ extension LicenseURLsMakable {
         }
         guard let url = carthageCheckoutsDirURL else { return [] }
         return try getLicenseURLs(dirURL: url)
+    }
+
+    private func getManualLicenseURLs() throws -> [URL] {
+        let dirURLString = options.manualLicenseFilesPath.isEmpty ? nil : options.manualLicenseFilesPath
+        let url = dirURLString.flatMap(URL.init)
+        return try url.map(getLicenseURLs) ?? []
     }
 
     private func getAllDirContentsURLs() throws -> [URL] {

@@ -11,6 +11,7 @@ public protocol LicensesMakable: class {
     var options: Options { get }
     var podsLicenseURLs: [URL] { get }
     var carthageLicenseURLs: [URL] { get }
+    var manualLicenseURLs: [URL] { get }
 }
 
 extension LicensesMakable {
@@ -22,14 +23,16 @@ extension LicensesMakable {
     public func makeLicenses() throws -> [LicenseType] {
         let podsLicenses = try getLicenses(licenseURLs: podsLicenseURLs)
         let carthageLicenses = try getLicenses(licenseURLs: carthageLicenseURLs)
-        let manualLicenses = try getManualAcknowledgements().map { License(object: $0) }
-        return (podsLicenses + carthageLicenses + manualLicenses).sorted(by: { $0.title < $1.title })
+        let manualPlistLicenses = try getManualPlistLicenses().map { License(object: $0) }
+        let manualLicenses = try getLicenses(licenseURLs: manualLicenseURLs)
+        return (podsLicenses + carthageLicenses + manualPlistLicenses + manualLicenses)
+            .sorted(by: { $0.title < $1.title })
     }
 
     public func makeLicenseLinks() throws -> [LicenseType] {
         let podsLicenseLinks = getLicenseLinks(licenseURLs: podsLicenseURLs)
         let carthageLicenseLinks = getLicenseLinks(licenseURLs: carthageLicenseURLs)
-        let manualLicenseLinks = try getManualAcknowledgements().map { LicenseLink(object: $0) }
+        let manualLicenseLinks = try getManualPlistLicenses().map { LicenseLink(object: $0) }
         return (podsLicenseLinks + carthageLicenseLinks + manualLicenseLinks).sorted(by: { $0.title < $1.title })
     }
 
@@ -52,12 +55,12 @@ extension LicensesMakable {
         }
     }
 
-    private func getManualAcknowledgements() throws -> [LicenseType.Dictionary] {
-        if options.manualAcknowledgementsPath.isEmpty {
+    private func getManualPlistLicenses() throws -> [LicenseType.Dictionary] {
+        if options.manualPlistPath.isEmpty {
             return []
 
         } else {
-            guard let plist = NSDictionary(contentsOfFile: options.manualAcknowledgementsPath) else {
+            guard let plist = NSDictionary(contentsOfFile: options.manualPlistPath) else {
                 throw AckError.manualAckPlist
             }
 

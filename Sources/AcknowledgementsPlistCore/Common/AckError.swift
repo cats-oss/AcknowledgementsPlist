@@ -12,7 +12,7 @@ public enum AckError: Error {
     case convertedURL
     case podsDirURL
     case carthageDirURL
-    case podsCarhageLicenseURLs
+    case emptyLicenseURLs
     case manualAckPlist
     case manualACKPref
 }

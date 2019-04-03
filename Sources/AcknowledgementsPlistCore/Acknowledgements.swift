@@ -13,6 +13,7 @@ public final class Acknowledgements: LicenseURLsMakable, LicensesMakable, Output
     public let manager: FileManager = .default
     public var podsLicenseURLs: [URL] = []
     public var carthageLicenseURLs: [URL] = []
+    public var manualLicenseURLs: [URL] = []
 
     public init(options: Options) throws {
         self.options = options
