@@ -1,7 +1,7 @@
 #!/bin/bash
 
 PROJECT_ROOT_PATH=./..
-ACK_PLIST_EXE=${PROJECT_ROOT_PATH}/Pods/AcknowledgementsPlist/AcknowledgementsPlist
+ACK_PLIST_EXE=${PROJECT_ROOT_PATH}/Pods/AcknowledgementsPlist/acknowledgementsplist
 OUTPUT_PLIST_PATH=./Sample/Resources/Sample-Acknowledgements.plist
 OUTPUT_BUNDLE_PATH=./Sample/Resources/Settings.bundle
 MANUAL_ACK_PATH=./Sample/Resources/ManualAcknowledgements.plist
