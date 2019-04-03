@@ -18,8 +18,8 @@ I implement it so that it will be completed locally!
 </table>
 
 ## Requirements
-- Xcode 10
-- Swift 4.2
+- Xcode 10.2+
+- Swift 5+
 
 ## How to install
 #### CocoaPods
@@ -37,9 +37,9 @@ I think that you can execute it after `Pods` or `Carthage` is updated.
 
 ### Usage
 ```
-./AcknowledgementsPlist [PROJECT_ROOT_PATH] [OUTPUT_PATH] [OPTIONS]
+acknowledgementsplist [PROJECT_ROOT_PATH] [OUTPUT_PATH] [OPTIONS]
 
-e.g. ./AcknowledgementsPlist . ./Sample-Acknowledgements.plist --manual-plist-path ./ManualAcknowledgements.plist
+e.g. acknowledgementsplist . ./Sample-Acknowledgements.plist --manual-plist-path ./ManualAcknowledgements.plist
 ```
 
 #### `[PROJECT_ROOT_PATH]`
@@ -93,7 +93,7 @@ e.g. ./AcknowledgementsPlist . ./Sample-Acknowledgements.plist --manual-plist-pa
 If `Carthage/Checkouts` does not exist, execute the command of `carthage checkout`.
 
 2. Determine the location of the `AcknowledgementsPlist` and the output location of `Plist`.  
-e.g. `./AcknowledgementsPlist . ./Sample/Resources/Sample-Acknowledgements.plist`
+e.g. `acknowledgementsplist . ./Sample/Resources/Sample-Acknowledgements.plist`
 
 ### Make Bundle
 1.  Please do `1.` of Make Plist.
@@ -122,7 +122,7 @@ e.g. `./AcknowledgementsPlist . ./Sample/Resources/Sample-Acknowledgements.plist
 ```
 
 3. Determine the location of the `AcknowledgementsPlist` and the output location of `Bundle`.  
-e.g. `./AcknowledgementsPlist . ./Sample/Resources/Settings.bundle`
+e.g. `acknowledgementsplist . ./Sample/Resources/Settings.bundle`
 
 ## LICENSE
 Under the MIT license. See [LICENSE](https://github.com/cats-oss/AcknowledgementsPlist/blob/master/LICENSE) file for details.
