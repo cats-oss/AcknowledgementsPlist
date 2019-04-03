@@ -4,6 +4,9 @@ BIN_NAME=acknowledgementsplist
 
 .PHONY: portable_zip
 
+project:
+	swift package generate-xcodeproj
+
 portable_zip:
 	swift build -c release --static-swift-stdlib
 	mkdir -p $(TEMP_ZIP_DIR)
