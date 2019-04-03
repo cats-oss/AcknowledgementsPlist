@@ -1,4 +1,4 @@
 ## Reactive
-github "ReactiveX/RxSwift" == 4.3.1
-github "RxSwiftCommunity/RxOptional" == 3.5.0
+github "ReactiveX/RxSwift" == 4.5.0
+github "RxSwiftCommunity/RxOptional" == 3.6.2
 github "RxSwiftCommunity/RxDataSources" == 3.1.0

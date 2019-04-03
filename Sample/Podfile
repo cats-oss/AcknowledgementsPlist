@@ -5,10 +5,10 @@ target 'Sample' do
   use_frameworks!
 
   ## Tool
-  pod 'AcknowledgementsPlist', '0.0.3'
+  pod 'AcknowledgementsPlist', '0.0.4'
 
   ## UI
   pod 'AttributedLabel', '2.0.0'
-  pod 'Reusable', '4.0.3'
+  pod 'Reusable', '4.0.5'
 
 end
