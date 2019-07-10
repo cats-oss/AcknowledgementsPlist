@@ -37,7 +37,6 @@ extension LicenseURLsMakable {
                 let isNotContainCarthageStrComponents = !url.path.localizedCaseInsensitiveContains("carthage")
                 return isLastPathPodsStr && isContainOnePodsStr && isNotContainCarthageStrComponents
             }
-            if podsDirURLs.count != 1 { throw AckError.podsDirURL }
             podsDirURL = podsDirURLs.first
         } else {
             podsDirURL = URL(string: options.podsPath)
@@ -57,7 +56,6 @@ extension LicenseURLsMakable {
                 let isNotContainPodsStrComponents = !url.path.localizedCaseInsensitiveContains("pods")
                 return isLastPathCheckoutsStr && isContainOneCarthageStr && isContainOneCheckoutsStr && isNotContainPodsStrComponents
             }
-            if carthageCheckoutsDirURLs.count != 1 { throw AckError.carthageDirURL }
             carthageCheckoutsDirURL = carthageCheckoutsDirURLs.first
         } else {
             carthageCheckoutsDirURL = URL(string: options.carthageCheckoutsPath)
