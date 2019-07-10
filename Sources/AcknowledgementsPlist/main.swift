@@ -37,12 +37,8 @@ let main = command(Argument<String>("project-root-path", description: "Project r
             print("ProjectRootPath not found.")
         case .convertedURL:
             print("It could not be converted to URL.")
-        case .podsDirURL:
-            print("Pods directory URL not found.")
-        case .carthageDirURL:
-            print("Carthage directory URL not found.")
         case .emptyLicenseURLs:
-            print("Pods and Carthage URLs is impty.")
+            print("Pods or Carthage directory is impty.")
         case .manualAckPlist:
             print("ManualAcknowledgements.plist not found.")
         case .manualACKPref:
