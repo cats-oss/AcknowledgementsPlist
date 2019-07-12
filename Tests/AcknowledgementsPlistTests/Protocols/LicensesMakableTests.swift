@@ -10,16 +10,17 @@ import XCTest
 @testable import AcknowledgementsPlistCore
 
 class LicensesMakableTests: XCTestCase, LicensesMakable {
-
     var options: Options = .init(projectRootPath: "",
                                  outputPlistPath: "",
                                  outputBundlePath: "",
                                  podsPath: "",
                                  carthageCheckoutsPath: "",
-                                 manualAcknowledgementsPath: "",
+                                 manualPlistPath: "",
+                                 manualLicenseFilesPath: "",
                                  excludeWordArray: [])
     var podsLicenseURLs: [URL] = []
     var carthageLicenseURLs: [URL] = []
+    var manualLicenseURLs: [URL] = []
 
     func testNotAllLicenses() {
         options = .init(projectRootPath: "",
@@ -27,7 +28,8 @@ class LicensesMakableTests: XCTestCase, LicensesMakable {
                         outputBundlePath: "",
                         podsPath: "",
                         carthageCheckoutsPath: "",
-                        manualAcknowledgementsPath: "",
+                        manualPlistPath: "",
+                        manualLicenseFilesPath: "",
                         excludeWordArray: [])
         podsLicenseURLs = []
         carthageLicenseURLs = []
@@ -41,7 +43,8 @@ class LicensesMakableTests: XCTestCase, LicensesMakable {
                         outputBundlePath: "",
                         podsPath: "",
                         carthageCheckoutsPath: "",
-                        manualAcknowledgementsPath: "",
+                        manualPlistPath: "",
+                        manualLicenseFilesPath: "",
                         excludeWordArray: [])
         podsLicenseURLs = ConstMocks.pProjectPodsLicensePaths.map { URL(fileURLWithPath: $0) }
         guard let licenses = try? makeLicenses() as? [License] else {
@@ -58,7 +61,8 @@ class LicensesMakableTests: XCTestCase, LicensesMakable {
                         outputBundlePath: "",
                         podsPath: "",
                         carthageCheckoutsPath: "",
-                        manualAcknowledgementsPath: "",
+                        manualPlistPath: "",
+                        manualLicenseFilesPath: "",
                         excludeWordArray: [])
         carthageLicenseURLs = ConstMocks.pcProjectCarthageLicensePaths.map { URL(fileURLWithPath: $0) }
         guard let licenses = try? makeLicenses() as? [License] else {
@@ -75,7 +79,8 @@ class LicensesMakableTests: XCTestCase, LicensesMakable {
                         outputBundlePath: "",
                         podsPath: "",
                         carthageCheckoutsPath: "",
-                        manualAcknowledgementsPath: "",
+                        manualPlistPath: "",
+                        manualLicenseFilesPath: "",
                         excludeWordArray: [])
         podsLicenseURLs = ConstMocks.pProjectPodsLicensePaths.map { URL(fileURLWithPath: $0) }
         carthageLicenseURLs = ConstMocks.pcProjectCarthageLicensePaths.map { URL(fileURLWithPath: $0) }
@@ -93,7 +98,8 @@ class LicensesMakableTests: XCTestCase, LicensesMakable {
                         outputBundlePath: "",
                         podsPath: "",
                         carthageCheckoutsPath: "",
-                        manualAcknowledgementsPath: ConstMocks.manualAcknowledgementsPath,
+                        manualPlistPath: ConstMocks.manualAcknowledgementsPath,
+                        manualLicenseFilesPath: "",
                         excludeWordArray: [])
         podsLicenseURLs = ConstMocks.pProjectPodsLicensePaths.map { URL(fileURLWithPath: $0) }
         carthageLicenseURLs = ConstMocks.pcProjectCarthageLicensePaths.map { URL(fileURLWithPath: $0) }
@@ -111,7 +117,8 @@ class LicensesMakableTests: XCTestCase, LicensesMakable {
                         outputBundlePath: "",
                         podsPath: "",
                         carthageCheckoutsPath: "",
-                        manualAcknowledgementsPath: "foo",
+                        manualPlistPath: "foo",
+                        manualLicenseFilesPath: "",
                         excludeWordArray: [])
         podsLicenseURLs = ConstMocks.pProjectPodsLicensePaths.map { URL(fileURLWithPath: $0) }
         carthageLicenseURLs = ConstMocks.pcProjectCarthageLicensePaths.map { URL(fileURLWithPath: $0) }
@@ -124,7 +131,8 @@ class LicensesMakableTests: XCTestCase, LicensesMakable {
                         outputBundlePath: "",
                         podsPath: "",
                         carthageCheckoutsPath: "",
-                        manualAcknowledgementsPath: "",
+                        manualPlistPath: "",
+                        manualLicenseFilesPath: "",
                         excludeWordArray: [])
         podsLicenseURLs = []
         carthageLicenseURLs = []
@@ -138,7 +146,8 @@ class LicensesMakableTests: XCTestCase, LicensesMakable {
                         outputBundlePath: "",
                         podsPath: "",
                         carthageCheckoutsPath: "",
-                        manualAcknowledgementsPath: "",
+                        manualPlistPath: "",
+                        manualLicenseFilesPath: "",
                         excludeWordArray: [])
         podsLicenseURLs = ConstMocks.pProjectPodsLicensePaths.map { URL(fileURLWithPath: $0) }
         guard let licenseLinks = try? makeLicenseLinks() as? [LicenseLink] else {
@@ -155,7 +164,8 @@ class LicensesMakableTests: XCTestCase, LicensesMakable {
                         outputBundlePath: "",
                         podsPath: "",
                         carthageCheckoutsPath: "",
-                        manualAcknowledgementsPath: "",
+                        manualPlistPath: "",
+                        manualLicenseFilesPath: "",
                         excludeWordArray: [])
         carthageLicenseURLs = ConstMocks.pcProjectCarthageLicensePaths.map { URL(fileURLWithPath: $0) }
         guard let licenses = try? makeLicenseLinks() as? [LicenseLink] else {
@@ -172,7 +182,8 @@ class LicensesMakableTests: XCTestCase, LicensesMakable {
                         outputBundlePath: "",
                         podsPath: "",
                         carthageCheckoutsPath: "",
-                        manualAcknowledgementsPath: "",
+                        manualPlistPath: "",
+                        manualLicenseFilesPath: "",
                         excludeWordArray: [])
         podsLicenseURLs = ConstMocks.pProjectPodsLicensePaths.map { URL(fileURLWithPath: $0) }
         carthageLicenseURLs = ConstMocks.pcProjectCarthageLicensePaths.map { URL(fileURLWithPath: $0) }
@@ -190,7 +201,8 @@ class LicensesMakableTests: XCTestCase, LicensesMakable {
                         outputBundlePath: "",
                         podsPath: "",
                         carthageCheckoutsPath: "",
-                        manualAcknowledgementsPath: ConstMocks.manualAcknowledgementsPath,
+                        manualPlistPath: ConstMocks.manualAcknowledgementsPath,
+                        manualLicenseFilesPath: "",
                         excludeWordArray: [])
         podsLicenseURLs = ConstMocks.pProjectPodsLicensePaths.map { URL(fileURLWithPath: $0) }
         carthageLicenseURLs = ConstMocks.pcProjectCarthageLicensePaths.map { URL(fileURLWithPath: $0) }
@@ -208,10 +220,11 @@ class LicensesMakableTests: XCTestCase, LicensesMakable {
                         outputBundlePath: "",
                         podsPath: "",
                         carthageCheckoutsPath: "",
-                        manualAcknowledgementsPath: "bar",
+                        manualPlistPath: "",
+                        manualLicenseFilesPath: "bar",
                         excludeWordArray: [])
         podsLicenseURLs = ConstMocks.pProjectPodsLicensePaths.map { URL(fileURLWithPath: $0) }
         carthageLicenseURLs = ConstMocks.pcProjectCarthageLicensePaths.map { URL(fileURLWithPath: $0) }
-        XCTAssertThrowsError(try makeLicenseLinks())
+        XCTAssertNoThrow(try makeLicenseLinks())
     }
 }

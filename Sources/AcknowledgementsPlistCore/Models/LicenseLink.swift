@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct LicenseLink: LicenseType {
+public struct LicenseLink: LicenseType, Hashable {
 
     private enum Name {
         static let plist = "AcknowledgementLinks.plist"
