@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct License: LicenseType {
+public struct License: LicenseType, Hashable {
 
     private enum Key {
         static let title = "Title"

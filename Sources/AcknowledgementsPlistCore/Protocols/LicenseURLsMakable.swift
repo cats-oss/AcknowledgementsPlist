@@ -41,8 +41,11 @@ extension LicenseURLsMakable {
         } else {
             podsDirURL = URL(string: options.podsPath)
         }
-        guard let url = podsDirURL else { return [] }
-        return try getLicenseURLs(dirURL: url)
+
+        return try podsDirURL.map { url in
+            let podsBinaryDirURL = url.appendingPathComponent("/_Prebuild", isDirectory: true)
+            return try getLicenseURLs(dirURL: url) + getLicenseURLs(dirURL: podsBinaryDirURL)
+            } ?? []
     }
 
     private func getCarthageLicenseURLs() throws -> [URL] {

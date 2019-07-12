@@ -25,7 +25,7 @@ extension LicensesMakable {
         let carthageLicenses = try getLicenses(licenseURLs: carthageLicenseURLs)
         let manualPlistLicenses = try getManualPlistLicenses().map { License(object: $0) }
         let manualLicenses = try getLicenses(licenseURLs: manualLicenseURLs)
-        return (podsLicenses + carthageLicenses + manualPlistLicenses + manualLicenses)
+        return Set(podsLicenses + carthageLicenses + manualPlistLicenses + manualLicenses)
             .sorted(by: { $0.title < $1.title })
     }
 
@@ -33,7 +33,8 @@ extension LicensesMakable {
         let podsLicenseLinks = getLicenseLinks(licenseURLs: podsLicenseURLs)
         let carthageLicenseLinks = getLicenseLinks(licenseURLs: carthageLicenseURLs)
         let manualLicenseLinks = try getManualPlistLicenses().map { LicenseLink(object: $0) }
-        return (podsLicenseLinks + carthageLicenseLinks + manualLicenseLinks).sorted(by: { $0.title < $1.title })
+        return Set(podsLicenseLinks + carthageLicenseLinks + manualLicenseLinks)
+            .sorted(by: { $0.title < $1.title })
     }
 
     private func getLicenses(licenseURLs: [URL]) throws -> [License] {
